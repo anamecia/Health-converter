@@ -1,0 +1,16 @@
+.header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background: $color-primary;
+    padding:0 5rem ;
+     
+    &__logo{
+        font-size: 2rem;
+        color: $color-white;
+
+        span:first-child{
+            font-weight: 800;
+        }
+    }
+}
