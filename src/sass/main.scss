@@ -4,5 +4,9 @@
 //Base
 @import "base/base";
 
+//Components
+@import "components/panel";
+
 //Layout
-@import "components/layout/header";
+@import "layout/header";
+@import "layout/navigation";
