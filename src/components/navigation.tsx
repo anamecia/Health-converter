@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { NavigationList, NavigationItem } from "../types/navigation";
 
@@ -11,37 +12,39 @@ const Navigation: React.FC = () => {
   const navigationList: NavigationList = [
     {
       name: "Home",
-      image: null,
+      link: "/",
     },
     {
       name: "Cholesterol",
-      image: null,
+      link: "/cholesterol",
     },
     {
       name: "Glucose",
-      image: null,
+      link: "/glusose",
     },
   ];
 
   return (
     <div className="navigation">
-      {navigationList.map((i: NavigationItem) => (
-        <div
-          className={`navigation__item  ${
-            selectedTab === i.name
-              ? "navigation__item--active"
-              : "navigation__item--inactive"
-          }`}
-          onClick={() => handleClick(i.name)}
-        >
+      {navigationList.map((i: NavigationItem, key: number) => (
+        <Link to={i.link} key={key}>
           <div
-            className={`navigation__item__text ${
-              selectedTab === i.name ? "navigation__item__text--active" : ""
+            className={`navigation__item  ${
+              selectedTab === i.name
+                ? "navigation__item--active"
+                : "navigation__item--inactive"
             }`}
+            onClick={() => handleClick(i.name)}
           >
-            {i.name}
+            <div
+              className={`navigation__item__text ${
+                selectedTab === i.name ? "navigation__item__text--active" : ""
+              }`}
+            >
+              {i.name}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
