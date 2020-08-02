@@ -5,9 +5,9 @@ import { NavigationList, NavigationItem } from "../types/navigation";
 const Navigation: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<string>("Home");
 
-  const handleClick = (name:string) => {
-    setSelectedTab(name)
-  }
+  const handleClick = (name: string) => {
+    setSelectedTab(name);
+  };
   const navigationList: NavigationList = [
     {
       name: "Home",
@@ -34,7 +34,13 @@ const Navigation: React.FC = () => {
           }`}
           onClick={() => handleClick(i.name)}
         >
-          <div className="navigation__item__text">{i.name}</div>
+          <div
+            className={`navigation__item__text ${
+              selectedTab === i.name ? "navigation__item__text--active" : ""
+            }`}
+          >
+            {i.name}
+          </div>
         </div>
       ))}
     </div>
