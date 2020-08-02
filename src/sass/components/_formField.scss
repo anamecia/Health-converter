@@ -1,0 +1,50 @@
+.field {
+  position: relative;
+  width: 30rem;
+  font-size: 1.6rem;
+  background: $color-primary-light1;
+  border: 1px solid $color-primary-light2;
+  border-radius: 3px;
+  padding: 1rem 1.5rem;
+
+  &:focus {
+    outline: none !important;
+    border: 1px solid $color-primary;
+  }
+
+  .field__input {
+    width: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .placeholder {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+    font-size: 1.5rem;
+    color: $color-grey;
+  }
+}
+
+.form {
+  display: flex;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding-left: 1rem;
+      cursor: pointer;
+    }
+  }
+}

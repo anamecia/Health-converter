@@ -3,6 +3,7 @@ import "./sass/main.scss";
 
 import Header from "./components/header";
 import Navigation from "./components/navigation";
+import CholesterolSection from "./sections/cholesterol"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="panel__main">
         <Navigation />
       </div>
+      <CholesterolSection />
     </div>
   );
 }
